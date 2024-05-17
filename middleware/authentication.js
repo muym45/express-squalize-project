@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
-require('dontec').config();
+require('dotenv').config();
 
-const {JWT_SECRET_KEY} = proccess.env
+const {JWT_SECRET_KEY} = process.env
 async function authentication(req, res, next) {
     const token = req.headers.authorization;
     jwt.verify(token, JWT_SECRET_KEY, function (err, decoded) {
